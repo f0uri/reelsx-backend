@@ -26,14 +26,11 @@ module.exports = async (req, res) => {
     });
 
     const json = await r.json();
-    if (req.query.debug) {
-  return res.status(200).json({ debug: true, raw: json, status: r.status });
-    }
 
     if (!json.success) {
       return res.status(502).json({
         success: false,
-        error: json.error || "لم يتم العثور على فيديو على هذا الرابط",
+        error: json.error || json.message || "لم يتم العثور على فيديو على هذا الرابط",
       });
     }
 

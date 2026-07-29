@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>ReelsX</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0b0b12" />
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<div class="app">
+
+  <!-- Header: clock + brand -->
+  <header class="topbar">
+    <div class="clock-wrap">
+      <div id="clockTime" class="clock-time">00:00:00</div>
+      <div id="clockDate" class="clock-date">—</div>
+    </div>
+    <div class="brand">
+      <div class="brand-logo">🔥</div>
+      <div class="brand-name">ReelsX</div>
+    </div>
+  </header>
+
+  <!-- Tabs -->
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="reel">تحميل ريلز</button>
+    <button class="tab-btn" data-tab="profile">البروفايل</button>
+  </nav>
+
+  <!-- Reel Tab -->
+  <section id="tab-reel" class="tab-panel active">
+
+    <div class="card input-card">
+      <input id="reelUrl" type="text" placeholder="ضع رابط الـ Reel هنا…" autocomplete="off" />
+      <button id="fetchReelBtn" class="primary-btn">
+        <span class="btn-label">استخراج الفيديو</span>
+        <span class="btn-spinner hidden"></span>
+      </button>
+    </div>
+
+    <div id="reelStatus" class="status-line"></div>
+
+    <div id="reelPreview" class="card preview-card hidden">
+      <div class="preview-media">
+        <img id="reelThumb" src="" alt="" />
+        <div class="play-badge">▶</div>
+      </div>
+      <div class="preview-body">
+        <div class="preview-author">
+          <span id="reelUsername">@username</span>
+        </div>
+        <div id="reelCaption" class="preview-caption"></div>
+
+        <div id="progressWrap" class="progress-wrap hidden">
+          <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+          <div id="progressLabel" class="progress-label">0%</div>
+        </div>
+
+        <button id="downloadReelBtn" class="download-btn">
+          ⬇︎ تحميل الفيديو
+        </button>
+      </div>
+    </div>
+
+    <div class="card history-card">
+      <div class="history-header">📂 آخر الروابط</div>
+      <ul id="history" class="history-list"></ul>
+    </div>
+
+  </section>
+
+  <!-- Profile Tab -->
+  <section id="tab-profile" class="tab-panel">
+
+    <div class="card input-card">
+      <input id="usernameInput" type="text" placeholder="اسم المستخدم بدون @…" autocomplete="off" />
+      <button id="fetchProfileBtn" class="primary-btn">
+        <span class="btn-label">بحث</span>
+        <span class="btn-spinner hidden"></span>
+      </button>
+    </div>
+
+    <div id="profileStatus" class="status-line"></div>
+
+    <div id="profileCard" class="card profile-card hidden">
+      <div class="profile-top">
+        <img id="profileAvatar" class="profile-avatar" src="" alt="" />
+        <div class="profile-info">
+          <div class="profile-fullname">
+            <span id="profileFullName">—</span>
+            <span id="verifiedBadge" class="verified-badge hidden">✔</span>
+          </div>
+          <div id="profileUsername" class="profile-username">@username</div>
+        </div>
+      </div>
+
+      <div id="profileBio" class="profile-bio"></div>
+
+      <div class="profile-stats">
+        <div class="stat"><div id="statPosts" class="stat-num">0</div><div class="stat-label">منشور</div></div>
+        <div class="stat"><div id="statFollowers" class="stat-num">0</div><div class="stat-label">متابع</div></div>
+        <div class="stat"><div id="statFollowing" class="stat-num">0</div><div class="stat-label">يتابع</div></div>
+      </div>
+
+      <button id="downloadAvatarBtn" class="download-btn">⬇︎ تحميل الصورة الشخصية</button>
+    </div>
+
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

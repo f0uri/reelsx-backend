@@ -1,0 +1,8 @@
+{
+  "name": "ReelsX",
+  "short_name": "ReelsX",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0b0b12",
+  "theme_color": "#0b0b12"
+}

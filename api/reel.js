@@ -57,6 +57,9 @@ module.exports = async (req, res) => {
     }
 
     const html = await r.text();
+    if (req.query.debug) {
+  return res.status(200).json({ debug: true, htmlPreview: html.slice(0, 800) });
+    }
 
     const videoMatch = html.match(VIDEO_RE);
     if (!videoMatch) {

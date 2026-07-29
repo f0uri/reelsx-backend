@@ -1,8 +1,17 @@
 {
   "name": "reelsx-backend",
   "version": "1.0.0",
-  "private": true,
-  "engines": {
-    "node": ">=18"
+  "main": "api/reel.js",
+  "scripts": {
+    "start": "node api/reel.js",
+    "vercel-build": "npm install"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ultra-igdl": "^1.0.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@vercel/node": "^2.0.0"
   }
 }

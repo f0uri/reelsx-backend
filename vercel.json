@@ -1,8 +1,11 @@
 {
+  "version": 2,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/reel" }
+  ],
   "functions": {
     "api/*.js": {
-      "memory": 256,
-      "maxDuration": 10
+      "runtime": "@vercel/node@2"
     }
   }
 }
